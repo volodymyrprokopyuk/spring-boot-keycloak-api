@@ -4,7 +4,6 @@ import org.keycloak.adapters.KeycloakConfigResolver
 import org.keycloak.adapters.springboot.KeycloakSpringBootConfigResolver
 import org.keycloak.adapters.springsecurity.authentication.KeycloakAuthenticationProvider
 import org.keycloak.adapters.springsecurity.config.KeycloakWebSecurityConfigurerAdapter
-import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.context.annotation.Bean
 import org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder
 import org.springframework.security.config.annotation.web.builders.HttpSecurity
@@ -26,8 +25,9 @@ open class KeycloakConfiguration : KeycloakWebSecurityConfigurerAdapter() {
         auth?.authenticationProvider(keycloakAuthenticationProvider())
     }
 
+    // configure Keycloak client in application.properties rather than in keycloak.json
     @Bean
-    open fun keycloakConfigResolver(): KeycloakConfigResolver = KeycloakSpringBootConfigResolver() // no keycloak.json
+    open fun keycloakConfigResolver(): KeycloakConfigResolver = KeycloakSpringBootConfigResolver()
 
     override fun sessionAuthenticationStrategy(): SessionAuthenticationStrategy =
             NullAuthenticatedSessionStrategy() // no session for stateless API
