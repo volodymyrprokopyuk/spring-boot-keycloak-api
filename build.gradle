@@ -1,6 +1,6 @@
 buildscript {
     ext {
-        kotlinGradlePluginVersion = "1.2.30"
+        kotlinGradlePluginVersion = "1.2.51"
         springBootGradlePluginVersion = "1.5.10.RELEASE"
     }
 
@@ -25,7 +25,7 @@ springBoot {
 version = "0.1.0"
 
 ext {
-    kotlinVersion = "1.2.30"
+    kotlinVersion = "1.2.51"
     springBootVersion = "1.5.10.RELEASE"
     keycloakVersion = "3.4.3.Final"
 }
@@ -38,7 +38,6 @@ dependencies {
     compile("org.jetbrains.kotlin:kotlin-stdlib:$kotlinVersion")
     compile("org.jetbrains.kotlin:kotlin-reflect:$kotlinVersion")
     compile("org.springframework.boot:spring-boot-starter-web:$springBootVersion")
-    compile("org.springframework.boot:spring-boot-starter-thymeleaf:$springBootVersion")
     compile("org.springframework.boot:spring-boot-starter-security:$springBootVersion")
     compile("org.keycloak:keycloak-spring-boot-starter:$keycloakVersion")
 }
